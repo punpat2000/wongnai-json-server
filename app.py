@@ -15,7 +15,9 @@ def index():
 
 @app.route('/trips')
 def trips():
-    return jsonify(data)
+    response = jsonify(data)
+    response.headers.add("Access-Control-Allow-Origin", "*") # Enable Access-Control-Allow-Origin
+    return response
 
 @app.route('/api/trips')
 def trip_query():
@@ -34,7 +36,9 @@ def trip_query():
         if header in trip['tags']:
             matched_items.append(trip)
             continue
-    return jsonify(trips = matched_items)
+    response = jsonify(trips = matched_items)
+    response.headers.add("Access-Control-Allow-Origin", "*") # Enable Access-Control-Allow-Origin
+    return response
 
 # if __name__ == '__main__':
 #   app.debug = True
