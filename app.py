@@ -11,7 +11,7 @@ with open('db.json', 'r', encoding='utf-8') as f:
         
 @app.route('/', methods=['GET'])
 def index():
-    return 'it works!'
+    return 'it works! Pattradanai Punvichartkul'
 
 @app.route('/trips')
 def trips():
