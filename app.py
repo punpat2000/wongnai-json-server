@@ -1,10 +1,8 @@
-# for local json server please run command python app.py
-
 from flask import request, Flask, jsonify
 import json
 
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False
+app.config['JSON_AS_ASCII'] = False # for Thai language displayability
 
 with open('db.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
